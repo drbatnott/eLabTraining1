@@ -34,4 +34,5 @@ public class AppTest
     	App newApp = new App();
         assertNotNull(newApp);
     }
+    
 }
