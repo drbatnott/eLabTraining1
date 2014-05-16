@@ -1,5 +1,8 @@
 package eLab.eLabTraining;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,8 +21,8 @@ public class App extends JFrame implements KeyListener {
 
 	public App() {
 		fred = new Player("fred");
-		add(fred.getCharacter());
 
+		getContentPane().setBackground(Color.white);
 		setSize(600, 300);
 		show();
 		addKeyListener((KeyListener) this);
@@ -31,22 +34,28 @@ public class App extends JFrame implements KeyListener {
 		System.out.println("Hello World w a7la messa 3al 7elween :D");
 
 	}
+	
+	public void paint(Graphics g) {
+		super.paint(g);
+		
+		Graphics2D g2d = (Graphics2D)g;
+		g2d.drawImage(fred.getImage(), fred.getX(), fred.getY(), this);
+	}
 
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		Point currentLocation = fred.getCharacter().getLocation();
 		
 		if (arg0.getKeyCode() == KeyEvent.VK_UP) {
-			fred.moveUp(currentLocation);
+			fred.moveUp();
 			repaint();
 		} else if (arg0.getKeyCode() == KeyEvent.VK_DOWN) {
-			fred.moveDown(currentLocation);
+			fred.moveDown();
 			repaint();
 		} else if (arg0.getKeyCode() == KeyEvent.VK_RIGHT) {
-			fred.moveRight(currentLocation);
+			fred.moveRight();
 			repaint();
 		} else if (arg0.getKeyCode() == KeyEvent.VK_LEFT) {
-			fred.moveLeft(currentLocation);
+			fred.moveLeft();
 			repaint();
 		}
 	}

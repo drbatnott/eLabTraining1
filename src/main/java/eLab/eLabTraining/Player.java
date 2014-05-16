@@ -1,5 +1,6 @@
 package eLab.eLabTraining;
 
+import java.awt.Image;
 import java.awt.Point;
 import java.io.CharConversionException;
 
@@ -13,8 +14,9 @@ public class Player {
 	int playerScore;
 	int playerLevel;
 	int playerRemainingTime;
-	JLabel character;
 	int characterSpeed = 2;
+	Image playerState;
+	int x, y;
 		
 	ImageIcon front = new ImageIcon("resources/front_1.png");
 	ImageIcon back = new ImageIcon("resources/back_1.png");
@@ -26,33 +28,45 @@ public class Player {
 	public Player(String player) {
 		// TODO Auto-generated constructor stub
 		playerName = player;
-		character = new JLabel(front);
+		playerState = front.getImage();
+		x = 300;
+		y = 150;
 	}
 	
-	public JLabel getCharacter() {
-		return character;
+//	public JLabel getCharacter() {
+//		return character;
+//	}
+	
+	public void moveRight() {
+		playerState = right.getImage();
+		x += characterSpeed;
+    }
+
+    public void moveLeft() {
+    	playerState = left.getImage();
+    	x -= characterSpeed;
+    }
+
+    public void moveUp() {
+    	playerState = back.getImage();
+    	y -= characterSpeed;
+    }
+
+    public void moveDown() {
+    	playerState = front.getImage();
+    	y += characterSpeed;
+    }
+	
+	public Image getImage() {
+		return playerState;
 	}
 	
-	public void moveRight(Point p) {
-		character.setIcon(right);
-		character.setLocation(p.x+characterSpeed, p.y);
-    }
+	public int getX() {
+		return x;
+	}
 
-    public void moveLeft(Point p) {
-    	character.setIcon(left);
-    	character.setLocation(p.x-characterSpeed, p.y);
-    }
-
-    public void moveUp(Point p) {
-    	character.setIcon(back);
-    	character.setLocation(p.x, p.y-characterSpeed);
-    }
-
-    public void moveDown(Point p) {
-    	character.setIcon(front);
-    	character.setLocation(p.x, p.y+characterSpeed);
-    }
-	
-	
+	public int getY() {
+		return y;
+	}
 
 }
