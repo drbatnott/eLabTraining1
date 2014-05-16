@@ -15,11 +15,11 @@ public class Player {
 	int playerRemainingTime;
 	JLabel character;
 	int characterSpeed = 2;
-	
-	ImageIcon front = new ImageIcon("C:/Users/Ali Zein/Dropbox/Trainings/Nottingham Training/SprCre3 VX v20131202.1425/Saved/front_1.png");
-	ImageIcon back = new ImageIcon("C:/Users/Ali Zein/Dropbox/Trainings/Nottingham Training/SprCre3 VX v20131202.1425/Saved/back_1.png");
-	ImageIcon right = new ImageIcon("C:/Users/Ali Zein/Dropbox/Trainings/Nottingham Training/SprCre3 VX v20131202.1425/Saved/right_1.png");
-	ImageIcon left = new ImageIcon("C:/Users/Ali Zein/Dropbox/Trainings/Nottingham Training/SprCre3 VX v20131202.1425/Saved/left_1.png");
+		
+	ImageIcon front = new ImageIcon("resources/front_1.png");
+	ImageIcon back = new ImageIcon("resources/back_1.png");
+	ImageIcon right = new ImageIcon("resources/right_1.png");
+	ImageIcon left = new ImageIcon("resources/left_1.png");
 
 	
 
