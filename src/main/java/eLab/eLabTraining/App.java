@@ -17,10 +17,10 @@ import javax.swing.JFrame;
  */
 public class App extends JFrame implements KeyListener {
 
-	static Player fred;
+	static Player player;
 
 	public App() {
-		fred = new Player("fred");
+		player = new Player("Fred");
 
 		getContentPane().setBackground(Color.white);
 		setSize(600, 300);
@@ -39,35 +39,33 @@ public class App extends JFrame implements KeyListener {
 		super.paint(g);
 		
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.drawImage(fred.getImage(), fred.getX(), fred.getY(), this);
+		g2d.drawImage(player.getImage(), player.getX(), player.getY(), this);
 	}
 
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
 		if (arg0.getKeyCode() == KeyEvent.VK_UP) {
-			fred.moveUp();
+			player.moveUp();
 			repaint();
 		} else if (arg0.getKeyCode() == KeyEvent.VK_DOWN) {
-			fred.moveDown();
+			player.moveDown();
 			repaint();
 		} else if (arg0.getKeyCode() == KeyEvent.VK_RIGHT) {
-			fred.moveRight();
+			player.moveRight();
 			repaint();
 		} else if (arg0.getKeyCode() == KeyEvent.VK_LEFT) {
-			fred.moveLeft();
+			player.moveLeft();
 			repaint();
 		}
 	}
 
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("pressed");
 	}
 
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("pressed");
 	}
 
 }
