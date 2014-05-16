@@ -1,4 +1,4 @@
-package spiderGame;
+package eLab.eLabTraining;
 
 
 import java.util.ArrayList;
